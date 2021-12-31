@@ -180,11 +180,11 @@ INSTALLED_APPS = [
                 <div class="card-body text-secondary">
                   <h5 class="card-title"> </h5>
                   <pre class="card-text">
-                    from django.shortcuts import render
-                    from django.http import HttpResponse
+from django.shortcuts import render
+from django.http import HttpResponse
                     
-                    def index(request):
-                        return HttpResponse("Hello, world. You're at the Apps1 index.")
+def index(request):
+    return HttpResponse("Hello, world. You're at the Apps1 index.")
                 </pre>
                 </div>
         </div>
@@ -233,12 +233,12 @@ INSTALLED_APPS = [
                 <div class="card-body text-secondary">
                   <h5 class="card-title"> </h5>
                   <pre class="card-text">
-                    from django.urls import path
-                    from . import views
+from django.urls import path
+from . import views
                     
-                    urlpatterns = [
-                        path('', views.index, name='index'),
-                    ]
+urlpatterns = [
+path('', views.index, name='index'),
+]
                 </pre>
                 </div>
         </div>
@@ -257,13 +257,13 @@ INSTALLED_APPS = [
                 <div class="card-body text-secondary">
                   <h5 class="card-title"> </h5>
                   <pre class="card-text">
-                    from django.contrib import admin
-                    from django.urls import include, path
+from django.contrib import admin
+from django.urls import include, path
                     
-                    urlpatterns = [
-                        path('app1/', include('app1.urls')),
-                        path('admin/', admin.site.urls),
-                    ]
+urlpatterns = [
+    path('app1/', include('app1.urls')),
+    path('admin/', admin.site.urls),
+]
                 </pre>
                 </div>
 
