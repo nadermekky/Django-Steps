@@ -302,5 +302,66 @@ urlpatterns = [
 
     </div>
 
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Creating models</h3>
+            <p>
+                Now we’ll define your models – essentially, your database layout, with additional metadata.
+                Open the file <strong>app1/models.py</strong> and put the following Python code in it:
+            </p>
+
+            <div class="card border-secondary mb-3" >
+                <div class="card-header">app1/models.py</div>
+                <div class="card-body text-secondary">
+                  <h5 class="card-title"> </h5>
+                  <pre class="card-text">
+from django.db import models
+class <strong> Modelname</strong>(models.Model):
+<strong>first_field_name</strong> = models.CharField(max_length=100)
+                </pre>
+                </div>
+        </div>
+    </div>
+    </div>
+    <h3>Create Migrations</h3>
+    <p>
+        Learn how to generate a database migration based on the model definition in Django. <br>
+        <div class="alert alert-primary"> C:\Users\NaderMekky\Desktop\djprojects\projectname\src > python manage.py makemigrations</div>
+    
+    <h3>Run Migrations</h3>
+    <p>
+        Learn how to run a database migration. <br>
+        <div class="alert alert-primary"> C:\Users\NaderMekky\Desktop\djprojects\projectname\src > python manage.py migrate</div>
+        
+    </p>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Register your model</h3>
+            <p>
+                So you’ve created a new model in Django, migrations are generated and executed,
+                 but how do you now see that model in the admin site? Read on to learn how.
+                Open the file <strong>app1/admin.py</strong> and add a reference to the model:
+            </p>
+
+            <div class="card border-secondary mb-3" >
+                <div class="card-header">app1/models.py</div>
+                <div class="card-body text-secondary">
+                  <h5 class="card-title"> </h5>
+                  <pre class="card-text">
+from django.contrib import admin
+from .models import <strong> Modelname</strong>
+                    
+admin.site.register(<strong> Modelname</strong>)
+                </pre>
+                </div>
+        </div>
+    </div>
+    </div>
+
+<p>and run the server <br>
+    <div class="alert alert-primary"> (project-name) C:\Users\NaderMekky\Desktop\djprojects\projectname\src> python manage.py runserver</div>
+     then Go to <a href="http://localhost:8000/admin/" target="blank">http://localhost:8000/admin/</a>  in your browser, and you should see your new model.</p>
+
 </body>
 </html>
